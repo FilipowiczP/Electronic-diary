@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { AdminButton, TeacherButton, StudentButton } from '../../components/buttons/buttons.style';
 
 import style from '../../style/home.module.scss';
@@ -32,9 +34,15 @@ export default function Main() {
     return (
         <main className={style.main}>
             <img className={style.image} src={foto} alt={foto} />
-            <AdminButton onMouseEnter={adminHandle} onMouseLeave={clearFoto}>Admin</AdminButton>
-            <TeacherButton onMouseEnter={teacherHandle} onMouseLeave={clearFoto}>Wykładowca</TeacherButton>
-            <StudentButton onMouseEnter={studentHandle} onMouseLeave={clearFoto}>Student</StudentButton>
+            <Link to='/admin'>
+                <AdminButton onMouseEnter={adminHandle} onMouseLeave={clearFoto}>Admin</AdminButton>
+            </Link>
+            <Link>
+                <TeacherButton onMouseEnter={teacherHandle} onMouseLeave={clearFoto}>Wykładowca</TeacherButton>
+            </Link>
+            <Link>
+                <StudentButton onMouseEnter={studentHandle} onMouseLeave={clearFoto}>Student</StudentButton>
+            </Link>
         </main>
     )
 }
