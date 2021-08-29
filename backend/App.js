@@ -1,4 +1,6 @@
 const { conntectDB } = require('./data/index');
+const { Admin } = require("./controllers/admin");
+
 const express = require('express');
 
 require('dotenv').config();
@@ -7,6 +9,7 @@ require('dotenv').config();
     try {
         const app = express();
 
+        app.use(Admin);
         await conntectDB();
 
         app.listen(process.env.PORT, () =>
