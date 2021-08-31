@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { AdminButton, TeacherButton, StudentButton } from '../../components/buttons/buttons.style';
+import { AdminButton, TeacherButton, StudentButton } from '../../components/buttons.style';
 
 import style from '../../style/home.module.scss';
 
@@ -9,8 +9,6 @@ import admin from '../../images/administrator.jpg';
 import nauczyciel from '../../images/nauczyciel.jpg';
 import student from '../../images/studnet.jpg';
 import mainFoto from '../../images/main.jpg';
-
-
 
 export default function Main() {
     const [foto, setFoto] = useState(mainFoto);

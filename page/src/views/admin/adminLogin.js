@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Form, Label, Input } from '../../components/form/form.style';
-import { AdminButton } from '../../components/buttons/buttons.style';
+import { useState, useContext } from 'react';
+import { Form, Label, Input } from '../../components/form.style';
+import { AdminButton } from '../../components/buttons.style';
 import { Link } from 'react-router-dom';
 import { adminFeatch } from '../../API/API';
 
@@ -15,15 +15,17 @@ export default function AdminLogin() {
         password: ""
     });
 
-    const handleLogin = async () => {
+    const handleLogin = async (event) => {
+        event.preventDefault();
         adminFeatch(formValue).then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => sessionStorage.setItem("token", data.token)).then(window.location.replace('admin-panel'))
+
     }
 
     return (
         <section className={style.section}>
             <img className={style.image} src={admin} alt="admin" />
-            <Form onSubmit={handleLogin}>
+            <Form onSubmit={(event) => handleLogin(event)}>
                 <Label>
                     Login:
                     <Input type="text" value={formValue.login} onChange={(event) => setFormValue({ ...formValue, login: event.target.value })} />
