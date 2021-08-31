@@ -2,6 +2,8 @@ const { conntectDB } = require('./data/index');
 const { Admin } = require("./controllers/admin");
 
 const express = require('express');
+const cors = require("cors");
+const bodyParser = require("body-parser");
 
 require('dotenv').config();
 
@@ -9,7 +11,10 @@ require('dotenv').config();
     try {
         const app = express();
 
+        app.use(cors());
+        app.use(bodyParser.json());
         app.use(Admin);
+
         await conntectDB();
 
         app.listen(process.env.PORT, () =>

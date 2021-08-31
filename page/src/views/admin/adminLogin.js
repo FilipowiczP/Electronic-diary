@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Form, Label, Input } from '../../components/form/form.style';
 import { AdminButton } from '../../components/buttons/buttons.style';
 import { Link } from 'react-router-dom';
+import { adminFeatch } from '../../API/API';
 
 import admin from '../../images/administrator.jpg';
 
@@ -15,7 +16,8 @@ export default function AdminLogin() {
     });
 
     const handleLogin = async () => {
-
+        adminFeatch(formValue).then(response => response.json())
+            .then(data => console.log(data));
     }
 
     return (
