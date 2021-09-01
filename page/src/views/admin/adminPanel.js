@@ -10,11 +10,5 @@ export default function AdminPanel() {
     }, [])
 
     return <h1>{test}</h1>
-    // if (token == null) {
-    //     window.location.replace("/admin");
-    // } else {
-    //     return (
-    //         <h1>{token}</h1>
-    //     )
-    // }
+
 }

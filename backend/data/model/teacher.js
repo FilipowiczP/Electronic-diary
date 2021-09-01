@@ -5,7 +5,11 @@ const schema = new Schema(
         id: Number,
         name: String,
         lastName: String,
-        password: String
+        adress: String,
+        phone: Number,
+        email: String,
+        password: String,
+        subject: String
     },
     {
         collection: "Teacher",

@@ -1,4 +1,4 @@
-const { conntectDB } = require('./data/index');
+const { conntectDB } = require('./data/connect');
 const { Admin } = require("./controllers/admin");
 
 const express = require('express');
