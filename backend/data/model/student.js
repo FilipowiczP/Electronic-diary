@@ -17,3 +17,19 @@ const schema = new Schema(
         collection: "Student",
     }
 );
+
+const Student = mongoose.model("Student", schema);
+
+function listOfStudents(callBack) {
+    Student.find({}).exec(function (err, students) {
+        if (err) {
+            callBack(err);
+        } else {
+            callBack(null, students);
+        }
+    });
+}
+
+module.exports = {
+    students: listOfStudents,
+};
