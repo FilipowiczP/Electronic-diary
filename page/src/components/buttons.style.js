@@ -6,12 +6,16 @@ const Button = styled.button`
     cursor: pointer;
     outline: none;
     color: white;
-    margin: 0 50px;
+    margin: 10px 50px;
 `
 
 export const AdminButton = styled(Button)`
     background-color: #013145;
     border-bottom: 4px solid #030303;
+`
+
+export const AdminPanelButtons = styled(AdminButton)`
+    width: 150px;
 `
 
 export const TeacherButton = styled(Button)`

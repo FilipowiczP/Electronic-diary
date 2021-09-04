@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './context/context';
 
 import Home from './views/main/Main';
-import adminLogin from "./views/admin/adminLogin";
-import adminPanel from "./views/admin/adminPanel";
+import AdminLogin from "./views/admin/adminLogin";
+import AdminPanel from "./views/admin/adminPanel";
+import Logout from "./views/logout/logout";
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/admin' component={adminLogin} />
-          <Route path='/admin-panel' component={adminPanel} />
+          <Route path='/admin' component={AdminLogin} />
+          <Route path='/admin-panel' component={AdminPanel} />
+          <Route path='/logout' component={Logout} />
         </Switch>
       </BrowserRouter>
     </AuthProvider>
