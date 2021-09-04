@@ -1,5 +1,6 @@
 const { conntectDB } = require('./data/connect');
 const { Admin } = require("./controllers/admin");
+const { Student } = require("./controllers/student");
 
 const express = require('express');
 const cors = require("cors");
@@ -14,6 +15,7 @@ require('dotenv').config();
         app.use(cors());
         app.use(bodyParser.json());
         app.use(Admin);
+        app.use(Student);
 
         await conntectDB();
 
